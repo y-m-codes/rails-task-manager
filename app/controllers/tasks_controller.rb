@@ -4,10 +4,6 @@ class TasksController < ApplicationController
     @tasks = Task.all
   end
 
-  def find
-
-  end
-
   def show
     @task = Task.find(params[:id])
   end
@@ -32,6 +28,7 @@ class TasksController < ApplicationController
   def edit
     # renders the view to get user input to modify an existing record,
     # does not save the input
+    @task = Task.find(params[:id])
   end
 
   def update
@@ -43,6 +40,9 @@ class TasksController < ApplicationController
 
   def destroy
     # deletes a selected record
+    @task = Task.find(params[:id])
+    @task.destroy
+    redirect_to tasks_path
   end
 
   private

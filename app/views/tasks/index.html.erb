@@ -2,14 +2,15 @@
 
 <ul>
 <%@tasks.each do |task|%>
-  <li><%="#{task.id}. #{task.title}: #{task.details}"%></li>
+  <li><%="#{task.id}. #{task.title}: #{task.details}"%>
+  <%= link_to "Show", task_path(id: task.id)%>
+  <%= link_to "Edit", edit_task_path(id: task.id)%>
+  <%= link_to "Delete", task_path(id: task.id), data: { turbo_method: :delete, turbo_confirm: "Are you sure?"} %>
+  </li>
 <%end%>
 </ul>
 
 <h2>Actions</h2>
-<ul> <!--How to link to the respective pages? I got the file path wrong-->
-  <li><a href= >Find a task</a></li>
-  <li><a href= >Add a task</a></li>
-  <li><a href= >Edit a task</a></li>
-  <li><a href= >Delete a task</a></li>
+<ul>
+  <li><a href="tasks/new">Add a task</a></li>
 </ul>
