@@ -1,0 +1,15 @@
+<h1>Tasks Manager</h1>
+
+<ul>
+<%@tasks.each do |task|%>
+  <li><%="#{task.id}. #{task.title}: #{task.details}"%></li>
+<%end%>
+</ul>
+
+<h2>Actions</h2>
+<ul> <!--How to link to the respective pages? I got the file path wrong-->
+  <li><a href="/trips/find">Find a task</a></li>
+  <li><a href= >Add a task</a></li>
+  <li><a href= >Edit a task</a></li>
+  <li><a href= >Delete a task</a></li>
+</ul>
