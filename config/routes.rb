@@ -5,7 +5,7 @@ Rails.application.routes.draw do
   resources :tasks
 
   get 'tasks', to: "tasks#index"
-  get 'tasks/find', to:
+  get 'tasks/find', to: "tasks#find"
   get 'tasks/:id', to: "tasks#show"
   get 'tasks/new', to: "tasks#new"
   post 'tasks', to: "tasks#create"
